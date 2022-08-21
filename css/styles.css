@@ -3,11 +3,71 @@ main {
   margin: 0 auto;
 }
 
+img {
+  vertical-align: bottom; /* 画像したの余白が消える */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 #main {
   width: 300px;
   height: 200px;
+  margin-bottom: 8px;
+}
+
+nav {
+  margin-bottom: 8px;
+}
+
+nav ul {
+  display: flex; /* 要素内(play,<,>)を横並びにできる */
+  justify-content: space-between; /* 間隔をあけつつ均等配置できる */
+}
+
+nav li {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px; /* 余白付ける */
+  text-align: center; /* 文字を中央揃え */
+  cursor: pointer;
+  user-select: none;
+}
+
+nav li:hover { /* マウスホバーしたときに効果を出せる */
+  background: #f8f8f8;
+}
+
+#play {
+  width: 140px;
+}
+
+#prev,
+#next {
+  width: 60px;
+}
+
+.thumbnails {
+  display:grid;
+  grid-template-columns: repeat(5, 56px);
+  gap: 5px;
+}
+
+.thumbnails li {
+  cursor: pointer;
+  opacity: 0.4; /* 普段の色を薄くする */
+}
+
+.thumbnails li:hover,
+.thumbnails li.current {
+  opacity: 1; /* 薄くした色を1にすることで戻す */
 }
 
 .thumbnails img {
   width: 56px;
 }
+
