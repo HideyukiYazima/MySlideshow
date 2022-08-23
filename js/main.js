@@ -17,4 +17,12 @@
   const mainImage = document.getElementById('main'); // mainのidを取得するため必要
   mainImage.src = images[currentIndex]; // メインイメージを映すためにcurrentIndexを代入
 
+  images.forEach(image => { // サムネイルのイメージを映すために使用
+    const img = document.createElement('img');
+    image.src = image;
+
+    const li = document.createElement('li');
+    li.appendChild(img);
+    document.querySelector('.thumbnails').appendChild(li);
+  })
 }
